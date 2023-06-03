@@ -37,7 +37,14 @@ function App() {
           </div>
           <div className="temp">
             {data.current ? <h1>{data.current.temp_f}°F</h1> : null}
-            {/* <h1>60F</h1> */}
+            
+          </div>
+          <div className="emoji">
+            {data.current ? (
+            data.current.condition ? (
+            <img src={data.current.condition.icon} alt="" />
+          ) : null
+        ) : null }
           </div>
           <div className="description">
             {data.current ? (
@@ -47,6 +54,8 @@ function App() {
             ) : null}
           </div>
         </div>
+
+
         {data.location ? (
           data.location.name ? (
             <div className="bottom">
